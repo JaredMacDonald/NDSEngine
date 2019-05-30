@@ -17,9 +17,11 @@ include $(DEVKITARM)/ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source
+SOURCES		:=	source\
+				source/core
 DATA		:=	data
-INCLUDES	:=	include
+INCLUDES	:=	include\
+				source/core
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -84,6 +86,7 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			-I$(CURDIR)/$(BUILD)
 
 .PHONY: $(BUILD) clean all
+.PHONY: $(BUILD) rebuild
 
 #---------------------------------------------------------------------------------
 all: $(BUILD)
@@ -99,6 +102,10 @@ $(BUILD): lib
 clean:
 	@echo clean ...
 	@rm -fr $(BUILD) lib
+
+rebuild:
+	$(MAKE) clean
+	$(MAKE) 
 
 #---------------------------------------------------------------------------------
 else

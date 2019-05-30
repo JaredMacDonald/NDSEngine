@@ -66,6 +66,8 @@
     <NMakeOutput>Engine.exe</NMakeOutput>
     <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make rebuild</NMakeReBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakeOutput>Engine.exe</NMakeOutput>
@@ -85,10 +87,14 @@
     <None Include="Makefile" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Core.h" />
+    <ClInclude Include="include\Core\Application.h" />
+    <ClInclude Include="include\Core\Core.h" />
+    <ClInclude Include="include\EntryPoint.h" />
+    <ClInclude Include="include\NDSEngine.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Core.cpp" />
+    <ClCompile Include="source\Core\Application.cpp" />
+    <ClCompile Include="source\Core\Core.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
