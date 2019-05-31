@@ -18,10 +18,17 @@ include $(DEVKITARM)/ds_rules
 TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
 SOURCES		:=	source\
-				source/core
+				source/core\
+				source/render\
+				source/render/2d\
+				source/render/3d
+
 DATA		:=	data
 INCLUDES	:=	include\
-				source/core
+				include/core\
+				include/render\
+				include/render/2d\
+				include/render/3d
 
 #---------------------------------------------------------------------------------
 # options for code generation

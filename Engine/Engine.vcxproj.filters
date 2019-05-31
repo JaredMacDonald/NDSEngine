@@ -19,6 +19,21 @@
     <Filter Include="Source Files\Core">
       <UniqueIdentifier>{1824f91b-8984-43ef-be3b-9387255be4aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Render">
+      <UniqueIdentifier>{51cedab7-a2bd-44f4-83e1-3bb84dd01b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{0c74c896-d6f7-48f1-bf56-619e48c3ed3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Render\2D">
+      <UniqueIdentifier>{23e94633-3e5d-46d9-adcf-5724705ee177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render\2D">
+      <UniqueIdentifier>{23ea2887-057a-4f48-ae1a-e3686314a18d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Debug">
+      <UniqueIdentifier>{7b38b6b1-26ee-42cb-ac4f-40ba27b90cd8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />
@@ -36,6 +51,12 @@
     <ClInclude Include="include\EntryPoint.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\Render\2D\Sprite.h">
+      <Filter>Header Files\Render\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Debug.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Core\Core.cpp">
@@ -43,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="source\Core\Application.cpp">
       <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Render\2D\Sprite.cpp">
+      <Filter>Source Files\Render\2D</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

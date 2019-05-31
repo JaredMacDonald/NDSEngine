@@ -70,8 +70,15 @@
     <NMakeReBuildCommandLine>make rebuild</NMakeReBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeOutput>Engine.exe</NMakeOutput>
+    <NMakeOutput>
+    </NMakeOutput>
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>make rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>C:\devkitPro\libnds\include;C:\Projects\NDS\NDSEngine\Engine\include</NMakeIncludeSearchPath>
+    <OutDir>$(ProjectDir)\bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\bin\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakeOutput>Engine.exe</NMakeOutput>
@@ -89,12 +96,15 @@
   <ItemGroup>
     <ClInclude Include="include\Core\Application.h" />
     <ClInclude Include="include\Core\Core.h" />
+    <ClInclude Include="include\Debug.h" />
     <ClInclude Include="include\EntryPoint.h" />
     <ClInclude Include="include\NDSEngine.h" />
+    <ClInclude Include="include\Render\2D\Sprite.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Core\Application.cpp" />
     <ClCompile Include="source\Core\Core.cpp" />
+    <ClCompile Include="source\Render\2D\Sprite.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
