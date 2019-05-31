@@ -17,14 +17,18 @@ include $(DEVKITARM)/ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source\
+SOURCEROOT=./source
+SOURCES		:= $(SOURCEROOT) $(sort $(dir $(wildcard $(SOURCEROOT)/*/)))
+#SOURCES		:=	source\
 				source/core\
 				source/render\
 				source/render/2d\
 				source/render/3d
 
 DATA		:=	data
-INCLUDES	:=	include\
+INCLUDESROOT = ./include
+INCLUDES 	:= $(INCLUDESROOT) $(sort $(dir $(wildcard $(INCLUDESROOT)/*/)))
+#INCLUDES	:=	include\
 				include/core\
 				include/render\
 				include/render/2d\
@@ -104,6 +108,8 @@ lib:
 $(BUILD): lib
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	@echo $(SOURCES)
+	@echo $(INCLUDES)
 
 #---------------------------------------------------------------------------------
 clean:
