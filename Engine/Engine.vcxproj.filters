@@ -34,6 +34,12 @@
     <Filter Include="Header Files\Debug">
       <UniqueIdentifier>{7b38b6b1-26ee-42cb-ac4f-40ba27b90cd8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{79e7ae3a-66da-409b-9dd9-7c3211fa1157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{15b06c45-ce83-4a01-8c11-be77a2d77150}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />
@@ -57,6 +63,9 @@
     <ClInclude Include="include\Debug.h">
       <Filter>Header Files\Debug</Filter>
     </ClInclude>
+    <ClInclude Include="include\Input\InputManager.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Core\Core.cpp">
@@ -67,6 +76,12 @@
     </ClCompile>
     <ClCompile Include="source\Render\2D\Sprite.cpp">
       <Filter>Source Files\Render\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Input\InputManager.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Core\EntryPoint.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

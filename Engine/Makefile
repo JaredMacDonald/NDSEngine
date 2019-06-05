@@ -17,32 +17,35 @@ include $(DEVKITARM)/ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
-SOURCEROOT=./source
-SOURCES		:= $(SOURCEROOT) $(sort $(dir $(wildcard $(SOURCEROOT)/*/)))
-#SOURCES		:=	source\
-				source/core\
-				source/render\
-				source/render/2d\
-				source/render/3d
+
+SOURCES		:= source\
+			   source/Core\
+			   source/Input\
+			   source/Render\
+			   source/Render/2D\
+			   source/Render/3D
+
+INCLUDES 	:= include\
+			   include/Core\
+			   include/Debug\
+			   include/Input\
+			   include/Render/2D\
+			   include/Render/3D
 
 DATA		:=	data
-INCLUDESROOT = ./include
-INCLUDES 	:= $(INCLUDESROOT) $(sort $(dir $(wildcard $(INCLUDESROOT)/*/)))
-#INCLUDES	:=	include\
-				include/core\
-				include/render\
-				include/render/2d\
-				include/render/3d
 
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
 ARCH	:=	-mthumb -mthumb-interwork
 
-CFLAGS	:=	-g -Wall -O2\
+#CFLAGS	:=	-g -Wall -O2\
 		-march=armv5te -mtune=arm946e-s \
 		-fomit-frame-pointer -ffast-math \
 		$(ARCH)
+CFLAGS	:=	-g -Wall\
+ 			-march=armv5te -mtune=arm946e-s\
+			$(ARCH)
 
 CFLAGS	+=	$(INCLUDE) -DARM9
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
@@ -50,6 +53,7 @@ CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
 ASFLAGS	:=	-g $(ARCH) -march=armv5te -mtune=arm946e-s
 LDFLAGS	=	-specs=ds_arm9.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
+LIBS	:= -lnds9
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
@@ -108,8 +112,6 @@ lib:
 $(BUILD): lib
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
-	@echo $(SOURCES)
-	@echo $(INCLUDES)
 
 #---------------------------------------------------------------------------------
 clean:
@@ -118,7 +120,7 @@ clean:
 
 rebuild:
 	$(MAKE) clean
-	$(MAKE) 
+	$(MAKE)
 
 #---------------------------------------------------------------------------------
 else

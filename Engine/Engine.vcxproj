@@ -98,12 +98,15 @@
     <ClInclude Include="include\Core\Core.h" />
     <ClInclude Include="include\Debug.h" />
     <ClInclude Include="include\EntryPoint.h" />
+    <ClInclude Include="include\Input\InputManager.h" />
     <ClInclude Include="include\NDSEngine.h" />
     <ClInclude Include="include\Render\2D\Sprite.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Core\Application.cpp" />
     <ClCompile Include="source\Core\Core.cpp" />
+    <ClCompile Include="source\Core\EntryPoint.cpp" />
+    <ClCompile Include="source\Input\InputManager.cpp" />
     <ClCompile Include="source\Render\2D\Sprite.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
